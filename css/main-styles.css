@@ -1,0 +1,114 @@
+/*!
+ * TrukTales Site CSS
+!*/
+
+body {
+	font-family:sans-serif;
+}
+
+#outer-wrapper {
+	width:780px;
+	margin:0 auto;
+	text-align:center;
+}
+
+h1 {
+	text-align: center;
+	font-size:48px;
+	text-shadow: 2px 2px #A8A8A8;
+}
+
+h2 {
+	text-align:center;
+	margin:0;
+	padding:7px;
+	font-size:18px;
+}
+
+a {
+	width:200px;
+}
+
+#footer-text {
+	margin-top:20px;
+	font-size:12px;
+	font-color:#A8A8A8;
+}
+
+a.simple-link {
+	color:#0088cc;
+}
+
+.inner-story-image-wrapper {
+	padding:20px 20px 0 0;
+	text-align:left;
+}
+
+input {
+	margin-top:5px;
+}
+
+.inner-story-wrapper0 {
+	border-bottom:1px solid #898A8C;
+}
+
+.inner-story-wrapper1 {
+	border-bottom:1px solid #898A8C;
+	background-color:#F9F8F6;
+}
+
+.delete-page-link {
+	float:right;
+	margin-top:-27px;
+	margin-right:10px;
+}
+
+.delete-page-link a:link {
+	color:#0088cc !important;
+}
+
+#add-another-page {
+	padding:20px 0;
+	background-color:#ffc;
+	border-bottom:1px solid #000;
+}
+
+#story-name-wrapper {
+	text-align:left;
+	font-size:18px;
+	font-weight:bold;
+	padding:10px 0 10px 30px;
+}
+
+#authors-illustrators-wrapper {
+	text-align:left;
+	font-size:18px;
+	font-weight:bold;
+	border-top:1px solid #898A8C;
+	border-bottom:1px solid #898A8C;
+	padding:10px 0 10px 30px;
+}
+
+.author-illustrator-width {
+	width:110px;
+	padding-top:5px;
+	float:left;
+}
+
+.title-input-width {
+	width:215px;
+	padding-top:5px;
+	float:left;
+}
+
+.auth-illustrator-textbox {
+	width:607px;
+}
+
+.title-textbox {
+	width:502px;
+}
+
+#create-story-button-wrapper {
+	margin-top:10px;
+}
