@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include 'dbconnect.php';
 
 $language = (!empty($_GET['language']) ? $_GET['language'] : "English");
@@ -8,7 +10,9 @@ $spelling = "Standard Spelling";
 $story_id = (!empty($_GET['story_id']) ? $_GET['story_id'] : null);
 $debug = (!empty($_GET['debug']) ? $_GET['debug'] : "false");
 $page_number = (!empty($_GET['page_number']) ? $_GET['page_number'] : null);
-$role = (!empty($_GET['role']) ? $_GET['role'] : "Student");
+$role = $_SESSION['role'];
+$username = $_SESSION['username'];
+//$role = (!empty($_GET['role']) ? $_GET['role'] : "Student");
 $task = (!empty($_GET['task']) ? $_GET['task'] : "none");
 $pagecount = (!empty($_GET['page-count']) ? $_GET['page-count'] : 8);
 $delete_page = (!empty($_GET['delete_page']) ? $_GET['delete_page'] : null);
@@ -50,10 +54,12 @@ while ($row = mysql_fetch_assoc($result)) {
   //echo "--page id: " . $page_id . "--<br />";
 }
 
+echo "Username: $username <br/> Role: $role <br/>";
 echo "Language: " . $language . ", " . $dialect . ", " . $spelling . "<br />";
 echo "Story ID: $story_id";
 
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -107,13 +113,20 @@ echo "Story ID: $story_id";
         }
       ?>
 
+      <!-- Login Screen -->
+      <?php
+        if (!isset($role)) {
+          include 'login.php';
+        }
+      ?>
+
       <!-- Teacher Main Screen -->
       <?php
         if ($role == "Teacher" && $task == "none") {
-          echo '<a href="index.php?role=Teacher&task=new-story" class="m-btn big blue">New Story</a><br />';
-          echo '<a href="index.php" class="m-btn big blue">Translate Story</a><br />';
-          echo '<a href="index.php" class="m-btn big blue">Browse Stories</a><br />';
-          echo '<a href="index.php" class="m-btn big blue">Assign Student Stories</a><br />';
+            echo '<a href="index.php?role=Teacher&task=new-story" class="m-btn big blue">New Story</a><br />';
+            echo '<a href="index.php" class="m-btn big blue">Translate Story</a><br />';
+            echo '<a href="index.php" class="m-btn big blue">Browse Stories</a><br />';
+            echo '<a href="index.php" class="m-btn big blue">Assign Student Stories</a><br />';
         }
       ?>
 
@@ -174,7 +187,7 @@ echo "Story ID: $story_id";
 
       <!-- Student Main Screen -->
       <?php
-        if ($story_id == null && $role != "Teacher") {
+        if ($story_id == null && $role == "Student") {
           $query = "SELECT spellings.spelling_ID AS spelling_id, languages.language_ID, dialects.language_ID, dialects.dialect_ID, spellings.dialect_ID, languages.language_name ";
           $query .= "FROM languages ";
           $query .= "INNER JOIN dialects ON dialects.language_id = languages.language_id ";
@@ -298,12 +311,14 @@ echo "Story ID: $story_id";
 
       ?>
 
+
+
       
       <!--<a href="#" class="m-btn big red">I Can See</a><br />
       <a href="#" class="m-btn big purple">Little Black Ant</a><br />
       <a href="#" class="m-btn big green">Maru</a><br />-->
       <div id="footer-text">
-        <a href="#" class="simple-link">Download Stories</a> | <a href="#" class="simple-link">Settings</a>
+        <a href="#" class="simple-link">Download Stories</a> | <a href="#" class="simple-link">Settings</a> | <a href="logout.php" class="simple-link">Logout</a> 
       </div>
       <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
       <script src="js/m-dropdown.min.js"></script>

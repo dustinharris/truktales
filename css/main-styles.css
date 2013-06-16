@@ -73,13 +73,6 @@ input {
 	border-bottom:1px solid #000;
 }
 
-#story-name-wrapper {
-	text-align:left;
-	font-size:18px;
-	font-weight:bold;
-	padding:10px 0 10px 30px;
-}
-
 #authors-illustrators-wrapper {
 	text-align:left;
 	font-size:18px;
@@ -95,18 +88,8 @@ input {
 	float:left;
 }
 
-.title-input-width {
-	width:215px;
-	padding-top:5px;
-	float:left;
-}
-
 .auth-illustrator-textbox {
 	width:607px;
-}
-
-.title-textbox {
-	width:502px;
 }
 
 #create-story-button-wrapper {
