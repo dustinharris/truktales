@@ -383,4 +383,4 @@ while ($row = mysql_fetch_assoc($result)) {
   </body>
 </html>
 
-<?php mysql_close($li); ?>
+<?php mysqli_close($con); ?>
