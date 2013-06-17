@@ -18,7 +18,7 @@
 			$username=$_POST['username'];
 			$password=$_POST['password'];
 			
-			$entry=mysql_query("SELECT * FROM users WHERE username = '$username'");
+			$entry=mysql_query("SELECT * FROM users WHERE users.username = '$username'");
 			if(mysql_num_rows($entry) != 0){
 				$row=mysql_fetch_array($entry);
 				if($row['password'] == $password){
