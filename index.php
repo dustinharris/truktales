@@ -80,6 +80,7 @@ include 'variables.php';
           } else if ($task == "browse-stories") {
             // Teacher Browse Stories
             include "teacher-browse-stories.php";
+          }
         }
       ?>
 
