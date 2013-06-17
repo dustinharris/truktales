@@ -122,7 +122,7 @@ while ($row = mysql_fetch_assoc($result)) {
         if ($role == "Teacher" && $task == "none") {
             echo '<a href="index.php?role=Teacher&task=new-story" class="m-btn big blue">New Story</a><br />';
             echo '<a href="index.php" class="m-btn big blue">Translate Story</a><br />';
-            echo '<a href="index.php" class="m-btn big blue">Browse Stories</a><br />';
+            echo '<a href="index.php?task=browse-stories" class="m-btn big blue">Browse Stories</a><br />';
             echo '<a href="index.php" class="m-btn big blue">Assign Student Stories</a><br />';
         }
       ?>
@@ -179,6 +179,13 @@ while ($row = mysql_fetch_assoc($result)) {
             echo '<div id="create-story-button-wrapper"><a href="#" name="create-story" class="m-btn big green">Click to Create Story</a></div>';
             echo '</form>';
           echo '</div>';
+        }
+      ?>
+
+      <!-- Teacher Browse Stories -->
+      <?php
+        if ($role == "Teacher" && $task == "browse-stories") {
+          include "browse-stories.php";
         }
       ?>
 
@@ -323,8 +330,8 @@ while ($row = mysql_fetch_assoc($result)) {
         echo "Story ID: $story_id</p>";
       ?>
       <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
-      <script src="js/m-dropdown.min.js"></script>
-      <script src="js/m-radio.min.js"></script>
+      <script type="text/javascript" src="js/m-dropdown.min.js"></script>
+      <script type="text/javascript" src="js/m-radio.min.js"></script>
     </div>
     <script>
       $(document).ready(function() {
