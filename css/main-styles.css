@@ -95,3 +95,33 @@ input {
 #create-story-button-wrapper {
 	margin-top:10px;
 }
+
+.story-list
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+.story-list td, .story-list th 
+{
+font-size:1.2em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+.story-list td {
+text-align:left;
+}
+.story-list th 
+{
+font-size:1.4em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#fff;
+}
+.story-list tr.alt td 
+{
+color:#000;
+background-color:#EAF2D3;
+}
