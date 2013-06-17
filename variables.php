@@ -5,7 +5,7 @@
   $story_id = (!empty($_GET['story_id']) ? $_GET['story_id'] : null);
   $debug = (!empty($_GET['debug']) ? $_GET['debug'] : "false");
   $page_number = (!empty($_GET['page_number']) ? $_GET['page_number'] : null);
-  $role = (!empty($_SESSION['role']) ? $_SESSION['role'] : null);
+  $role = (isset($_SESSION['role']) ? $_SESSION['role'] : "");
   $username = (!empty($_SESSION['username']) ? $_SESSION['username'] : null);
   $task = (!empty($_GET['task']) ? $_GET['task'] : "none");
   $pagecount = (!empty($_GET['page-count']) ? $_GET['page-count'] : 8);

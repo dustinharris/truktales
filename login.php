@@ -29,10 +29,12 @@
 				}
 				else {
 					$errors['password']=true;
+					include 'login-html.php';
 				}
 			}
 			else {
 				$errors['username']=true;
+				include 'login-html.php';
 			}
 
 		}
