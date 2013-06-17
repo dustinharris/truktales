@@ -59,6 +59,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Story | Truk Tales</title>
     <link href="css/m-styles.min.css" rel="stylesheet">
     <link href="css/main-styles.css" rel="stylesheet">
