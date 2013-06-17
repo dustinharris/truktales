@@ -54,10 +54,6 @@ while ($row = mysql_fetch_assoc($result)) {
   //echo "--page id: " . $page_id . "--<br />";
 }
 
-echo "Username: $username <br/> Role: $role <br/>";
-echo "Language: " . $language . ", " . $dialect . ", " . $spelling . "<br />";
-echo "Story ID: $story_id";
-
 ?>
 
 <!DOCTYPE html>
@@ -320,6 +316,11 @@ echo "Story ID: $story_id";
       <div id="footer-text">
         <a href="#" class="simple-link">Download Stories</a> | <a href="#" class="simple-link">Settings</a> | <a href="logout.php" class="simple-link">Logout</a> 
       </div>
+      <?php
+        echo "<p>Username: $username <br/> Role: $role <br/>";
+        echo "Language: " . $language . ", " . $dialect . ", " . $spelling . "<br />";
+        echo "Story ID: $story_id</p>";
+      ?>
       <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
       <script src="js/m-dropdown.min.js"></script>
       <script src="js/m-radio.min.js"></script>
