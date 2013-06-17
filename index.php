@@ -115,7 +115,7 @@ echo "Story ID: $story_id";
 
       <!-- Login Screen -->
       <?php
-        if ($role != null) {
+        if ($role == null) {
           include 'login.php';
         }
       ?>
