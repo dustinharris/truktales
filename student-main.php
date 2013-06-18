@@ -36,6 +36,6 @@
     if ($language != "English") {
       $btn_color = "red";
     }
-    echo '<a href="index.php?story_id=' . $row['id'] . '&page_number=1" class="m-btn big ' . $btn_color . '">' . $row['title'] . '</a><br />';
+    echo '<a href="index.php?story_id=' . $row['id'] . '&page_number=1" class="m-btn big ' . $btn_color . '">' . utf8_encode($row['title']) . '</a><br />';
   }
 ?>

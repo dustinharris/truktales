@@ -125,3 +125,25 @@ color:#fff;
 color:#000;
 background-color:#EAF2D3;
 }
+
+#story-name-wrapper {
+	text-align:left;
+	font-size:18px;
+	font-weight:bold;
+	border-top:1px solid #898A8C;
+	padding:10px 0 10px 30px;
+}
+
+.title-translate-width, .author-illustrator-translate-width {
+	padding-top:5px;
+}
+
+.title-width {
+	width:110px;
+	padding-top:5px;
+	float:left;
+}
+
+.title-textbox {
+	width:535px;
+}

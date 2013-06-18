@@ -17,34 +17,18 @@
   // If this is the first page, show the authors and illustrators
   if ($page_number == 1) {
     // Collect Authors
-    $query = "SELECT authors.author_name as author ";
+    $query = "SELECT story_authors, story_illustrators ";
     $query .= "FROM stories ";
-    $query .= "INNER JOIN stories_authors ON stories_authors.story_id = stories.story_id ";
-    $query .= "INNER JOIN authors ON authors.author_id = stories_authors.author_id ";
     $query .= "WHERE stories.story_id = '$story_id'";
     $result = mysql_query($query);
-    echo '<p>Authors: ';
 
     // Display Authors
     while ($row = mysql_fetch_assoc($result)) {
-      echo $row['author'] . " ";
+      echo '<p>Authors: ' . $row['story_authors'];
+      echo "<br />";
+      echo 'Illustrators: ' . $row['story_illustrators'];
+      echo "</p>";
     }
-    echo "<br />";
-
-    // Collect Illustrators
-    $query = "SELECT illustrators.illustrator_name as illustrator ";
-    $query .= "FROM stories ";
-    $query .= "INNER JOIN stories_illustrators ON stories_illustrators.story_id = stories.story_id ";
-    $query .= "INNER JOIN illustrators ON illustrators.illustrator_id = stories_illustrators.illustrator_id ";
-    $query .= "WHERE stories.story_id = '$story_id'";
-    $result = mysql_query($query);
-    echo 'Illustrators: ';
-
-    while ($row = mysql_fetch_assoc($result)) {
-      echo $row['illustrator'] . " ";
-    }
-
-    echo "</p>";
   }
 
   // If this isn't the first page, show the story text.
@@ -60,7 +44,7 @@
 
     // Display Text
     while ($row = mysql_fetch_assoc($result)) {
-      echo "<p>" . $row['page_text'] . "</p>";
+      echo "<p>" . utf8_encode($row['page_text']) . "</p>";
     }
   }
 

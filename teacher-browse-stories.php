@@ -39,7 +39,7 @@
 		while ($row = mysql_fetch_assoc($result)) {
 			echo '<tr><td><a href="#" class="simple-link">' . utf8_encode($row["story_title"]) . '</a></td>';
 			echo '<td><a href="#" class="simple-link">Edit</a></td>';
-			echo '<td><a href="index.php?story_id=' . $row["story_id"] . '&new_story_spelling=1&task=translate-story" class="simple-link">Translate</a></td>';
+			echo '<td><a href="index.php?story_id=' . $row["story_id"] . '&new_story_spelling=1&task=translate-story&title1=' . utf8_encode($row["story_title"]) . '&authors=' . utf8_encode($row["story_authors"]) . '&illustrators=' . utf8_encode($row["story_illustrators"]) . '" class="simple-link">Translate</a></td>';
 			if ($row['story_creator'] == $username) {
 				echo '<td><a href="#" class="simple-link">Delete</a></td>';
 			} else {
