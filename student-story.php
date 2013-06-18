@@ -1,4 +1,7 @@
 <?php
+  // Begin page_wrapper div for swipe functionality
+  echo '<div id="page_wrapper">';
+
   // Collect image
   $query = "SELECT pictures.picture_file AS image ";
   $query .= "FROM pictures ";
@@ -73,4 +76,7 @@
   } else {
     echo '<a href="index.php" class="simple-link">Close Story</a>';
   }
+
+  // Close page_wrapper div for swipe functionality
+  echo "</div>";
 ?>
