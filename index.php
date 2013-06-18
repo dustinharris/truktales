@@ -63,6 +63,8 @@ while ($row = mysql_fetch_assoc($result)) {
     <title>Story | Truk Tales</title>
     <link href="css/m-styles.min.css" rel="stylesheet">
     <link href="css/main-styles.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
   </head>
   <body>
     <div id="outer-wrapper">
@@ -235,6 +237,8 @@ while ($row = mysql_fetch_assoc($result)) {
         else if ($story_id != null && $page_number != null) {
           // Ready to tell a story
           //echo "--on page " . $page_id . "--";
+
+          echo '<div id="page_wrapper">';
           
           // Collect image
           $query = "SELECT pictures.picture_file AS image ";
@@ -298,6 +302,8 @@ while ($row = mysql_fetch_assoc($result)) {
             }
           }
 
+          echo '</div>';
+
           echo "Page " . $page_number . " | ";
           $query = "SELECT COUNT(*) AS numpages FROM pages WHERE pages.story_id = '" . $story_id . "'";
           $result = mysql_query($query);
@@ -329,10 +335,20 @@ while ($row = mysql_fetch_assoc($result)) {
         echo "Language: " . $language . ", " . $dialect . ", " . $spelling . "<br />";
         echo "Story ID: $story_id</p>";
       ?>
-      <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
       <script type="text/javascript" src="js/m-dropdown.min.js"></script>
       <script type="text/javascript" src="js/m-radio.min.js"></script>
     </div>
+    <script>
+      $(function() {      
+        //Enable swiping...
+        $("#page_wrapper").swipe( {
+          //Generic swipe handler for all directions
+          swipe:function(event, direction, distance, duration, fingerCount) {
+            window.location.href = "index.php?story_id=<?php echo $story_id ?>&page_number=<?php echo ($page_number + 1)?>";
+          }
+        });
+      });
+    </script>
     <script>
       $(document).ready(function() {
         $("a").click(function(e) {
