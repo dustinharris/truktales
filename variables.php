@@ -3,6 +3,7 @@
   $dialect = "Standard English";
   $spelling = "Standard Spelling";
   $story_id = (!empty($_GET['story_id']) ? $_GET['story_id'] : null);
+  $new_story_spelling = (!empty($_GET['new_story_spelling']) ? $_GET['new_story_spelling'] : null);
   $debug = (!empty($_GET['debug']) ? $_GET['debug'] : "false");
   $page_number = (!empty($_GET['page_number']) ? $_GET['page_number'] : null);
   $role = (isset($_SESSION['role']) ? $_SESSION['role'] : "");

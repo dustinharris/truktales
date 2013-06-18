@@ -45,6 +45,9 @@ include 'variables.php';
           } else if ($task == "browse-stories") {
             // Teacher Browse Stories
             include "teacher-browse-stories.php";
+          } else if ($task == "translate-story") {
+            // Teacher Translate Story
+            include "teacher-translate-story.php";
           }
         }
 
