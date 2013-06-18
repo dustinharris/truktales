@@ -66,11 +66,12 @@ include 'variables.php';
       <div id="footer-text">
         <a href="#" class="simple-link">Download Stories</a> | <a href="#" class="simple-link">Settings</a> | <a href="logout.php" class="simple-link">Logout</a> 
       </div>
-      <?php
-        echo "<p>Username: $username <br/> Role: $role <br/>";
-        echo "Language: " . $language . ", " . $dialect . ", " . $spelling . "<br />";
-        echo "Story ID: $story_id</p>";
-      ?>
+        <?php
+          // Test strings
+          // echo "<p>Username: $username <br/> Role: $role <br/>";
+          // echo "Language: " . $language . ", " . $dialect . ", " . $spelling . "<br />";
+          // echo "Story ID: $story_id</p>";
+        ?>
       <script type="text/javascript" src="js/m-dropdown.min.js"></script>
       <script type="text/javascript" src="js/m-radio.min.js"></script>
     </div>

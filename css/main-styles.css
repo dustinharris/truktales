@@ -77,7 +77,6 @@ input {
 	text-align:left;
 	font-size:18px;
 	font-weight:bold;
-	border-top:1px solid #898A8C;
 	border-bottom:1px solid #898A8C;
 	padding:10px 0 10px 30px;
 }
@@ -131,6 +130,7 @@ background-color:#EAF2D3;
 	font-size:18px;
 	font-weight:bold;
 	border-top:1px solid #898A8C;
+	border-bottom:1px solid #898A8C;
 	padding:10px 0 10px 30px;
 }
 
@@ -146,4 +146,11 @@ background-color:#EAF2D3;
 
 .title-textbox {
 	width:535px;
+}
+
+#authors-illustrators-page-wrapper {
+	text-align:left;
+	font-size:18px;
+	font-weight:bold;
+	padding:70px 0 10px 30px;
 }
