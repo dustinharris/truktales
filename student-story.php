@@ -44,7 +44,7 @@
 
     // Display Text
     while ($row = mysql_fetch_assoc($result)) {
-      echo "<p>" . utf8_encode($row['page_text']) . "</p>";
+      echo '<p style="font-size:18px;">' . utf8_encode($row['page_text']) . "</p>";
     }
   }
 
