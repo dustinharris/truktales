@@ -16,6 +16,7 @@ include 'variables.php';
     <link href="css/main-styles.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+    <script src="js/turn.min.js"></script>
   </head>
   <body>
     <div id="outer-wrapper">

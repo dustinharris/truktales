@@ -108,4 +108,13 @@
 
   // Close outer book wrapper
   echo '</div>';
+  echo 
+    "<script type=\"text/javascript\">
+      $(window).ready(function() {
+        $('#book').turn({
+          display: 'single',
+          height: 700
+        });
+      });
+    </script>"
 ?>

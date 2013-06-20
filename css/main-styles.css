@@ -154,3 +154,7 @@ background-color:#EAF2D3;
 	font-weight:bold;
 	padding:70px 0 10px 30px;
 }
+
+#book .page {
+	background-color: white;
+}
